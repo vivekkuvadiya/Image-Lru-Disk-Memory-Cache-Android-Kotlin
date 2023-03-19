@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/generateDogImageFragment"
+        android:name="com.example.imagelrucache.ui.genratedogimage.GenerateDogImageFragment"
+        android:label="Generates Dogs!"
+        tools:layout="@layout/fragment_generate_dog_image" />
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.imagelrucache.ui.mainscreen.MainFragment"
+        android:label="Image Caching"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_generateDogImageFragment"
+            app:destination="@id/generateDogImageFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_recentDogImagesFragment"
+            app:destination="@id/recentDogImagesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recentDogImagesFragment"
+        android:name="com.example.imagelrucache.ui.recentdogimage.RecentDogImagesFragment"
+        android:label="My Recent Genrated Dogs!"
+        tools:layout="@layout/fragment_recent_dog_images" />
+
+</navigation>
